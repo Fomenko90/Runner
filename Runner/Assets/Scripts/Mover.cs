@@ -27,8 +27,10 @@ public class Mover : MonoBehaviour
         if (Input.GetKey(KeyCode.R))
         {
            zPos = 15.00414f;
-           xPos = 2.511f;
-           transform.position = new Vector3 (xPos , 4.743417f , zPos); 
+           xPos = 2.711f;
+           transform.position = new Vector3 (xPos , 5.743417f , zPos); 
+           speed = 2;
+           //можно ли сделать перезарядку на R
         }
         else if (Input.GetKey(KeyCode.T))
         {
