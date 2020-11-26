@@ -38,8 +38,12 @@ public class Mover : MonoBehaviour
            xPos = 2.511f;
            transform.position = new Vector3 (xPos , 6.643417f , zPos); 
            speed = 2;
+<<<<<<< HEAD
            gameObject.GetComponent<Rigidbody>().useGravity = true;
            
+=======
+           //есть неприятный баг
+>>>>>>> 5d6721a484363008027653389f6c2da253a0d605
         }
         else if (Input.GetKey(KeyCode.T))
         {
