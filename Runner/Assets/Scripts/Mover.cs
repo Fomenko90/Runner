@@ -9,6 +9,11 @@ public class Mover : MonoBehaviour
     float zPos; 
     float xPos;
     float yPos;
+    //static Component rb = gameObject.GetComponent<Rigidbody>();
+    //gForceVector = 1000;
+    //Vector3 newVelocity = rb.velocity + gForceVector * rb.mass * Time.deltaTime;
+    //rb.velocity = newVelocity; 
+    
     
     void Start()
     {
@@ -26,13 +31,19 @@ public class Mover : MonoBehaviour
         
         if (Input.GetKey(KeyCode.R))
         {
+           
+           gameObject.GetComponent<Rigidbody>().useGravity = false;
+           gameObject.GetComponent<Rigidbody>().velocity = new Vector3(0,0,0);
            zPos = 15.00414f;
            xPos = 2.511f;
-           transform.position = new Vector3 (xPos , 4.743417f , zPos); 
+           transform.position = new Vector3 (xPos , 6.643417f , zPos); 
+           speed = 2;
+           gameObject.GetComponent<Rigidbody>().useGravity = true;
+           
         }
         else if (Input.GetKey(KeyCode.T))
         {
-            if(speed <= 20)
+            if(speed <= 7)
             {
                 speed = speed + 1;
             }
@@ -51,5 +62,12 @@ public class Mover : MonoBehaviour
     
         transform.position = new Vector3 (xPos , transform.position.y , zPos); 
     }
-
+    
+    void OnCollisionEnter (Collision other)
+    {
+        if(other.gameObject.CompareTag ("Growing Obstacle"))
+        {
+            gameObject.SetActive(false);
+        }
+    }
 }
