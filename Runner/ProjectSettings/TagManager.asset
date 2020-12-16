@@ -6,7 +6,10 @@ TagManager:
   tags:
   - Screen
   - Growing Obstacle
+<<<<<<< HEAD
   - Floor
+=======
+>>>>>>> 6025250fb326e666d63e643589f5ebe40789bd93
   layers:
   - Default
   - TransparentFX

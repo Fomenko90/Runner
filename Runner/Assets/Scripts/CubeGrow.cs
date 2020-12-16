@@ -18,7 +18,11 @@ public class CubeGrow : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+<<<<<<< HEAD
         if (toGrow && transform.position.y < 0.46){
+=======
+        if (toGrow && transform.position.y < 4.94){
+>>>>>>> 6025250fb326e666d63e643589f5ebe40789bd93
             transform.Translate (Vector3.up * Time.fixedDeltaTime * growSpeed);
             }
         
